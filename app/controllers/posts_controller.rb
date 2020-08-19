@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :move_to_sign_in, only: [:new, :create]
+
   def new
     @post = Post.new
   end
@@ -16,6 +18,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def move_to_sign_in
+    redirect_to new_user_session_path unless user_signed_in?
+  end
 
   def post_params
     params.require(:post).permit(
