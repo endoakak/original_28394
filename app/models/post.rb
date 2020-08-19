@@ -7,9 +7,9 @@ class Post < ApplicationRecord
   with_options presence: true do
     validates :title
     validates :content
-    validates :spoiler
     validates :category
   end
 
+  validates :spoiler, inclusion: [true, false]
   validates :content, length: { maximum: 1000 }
 end

@@ -31,7 +31,7 @@ RSpec.describe Post, type: :model do
     it "spoiler情報がないと保存できない" do
       @post.spoiler = nil
       @post.valid?
-      expect(@post.errors.full_messages).to include("Spoiler can't be blank")
+      expect(@post.errors.full_messages).to include("Spoiler is not included in the list")
     end
 
     it "categoryが空だと保存できない" do
