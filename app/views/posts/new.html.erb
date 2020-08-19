@@ -1,0 +1,26 @@
+<%= form_with model: @post, local: true do |f| %>
+
+<div class="field">
+  <%= f.label :title, "作品タイトル" %><br />
+  <%= f.text_field :title, autofocus: true, autocomplete: "off" %>
+</div>
+
+<div class="field">
+  <%= f.label :content, "本文" %><br />
+  <%= f.text_field :content, autocomplete: "off" %>
+</div>
+
+<div class="field">
+  <%= f.label :spoiler, "ネタバレ" %><br />
+  <%= f.check_box :spoiler %>
+</div>
+
+<div class="field">
+  <%= f.label :category_id, "カテゴリー" %><br />
+  <%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: "--"}) %>
+</div>
+
+<div class="field">
+  <%= f.submit "送信" %>
+</div>
+<% end %>

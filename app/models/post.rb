@@ -3,7 +3,6 @@ class Post < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :category
-  end
 
   with_options presence: true do
     validates :title
@@ -12,5 +11,5 @@ class Post < ApplicationRecord
     validates :category
   end
 
-  validates :content, length: { maximun: 1000 }
+  validates :content, length: { maximum: 1000 }
 end
