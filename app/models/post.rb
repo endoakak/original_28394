@@ -11,4 +11,6 @@ class Post < ApplicationRecord
     validates :spoiler
     validates :category
   end
+
+  validates :content, length: { maximun: 1000 }
 end
