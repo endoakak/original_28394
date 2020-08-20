@@ -34,6 +34,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    if @post.destroy
+      redirect_to posts_path
+    else
+      render :show
+    end
+  end
+
   private
 
   def move_to_sign_in
