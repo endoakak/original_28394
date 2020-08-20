@@ -3,3 +3,7 @@
   border: 2px solid lightgrey;
   width: 40vw;
 }
+
+.post-link {
+  text-decoration: none;
+}
