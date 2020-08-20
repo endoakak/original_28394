@@ -12,3 +12,8 @@
   background-color: orange;
   text-decoration: none;
 }
+
+.post-delete-btn {
+  background-color: pink;
+  text-decoration: none;
+}

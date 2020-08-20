@@ -32,6 +32,7 @@
 <div class="field">
   <%= f.submit "更新" %>
 </div>
+<%= link_to "この投稿を削除する", post_path(@post.id), method: :delete, class:"post-delete-btn" %>
 
 <%= link_to "投稿一覧", posts_path %>
 <% end %>
