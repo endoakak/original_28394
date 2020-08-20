@@ -7,3 +7,8 @@
 .post-link {
   text-decoration: none;
 }
+
+.post-edit-btn {
+  background-color: orange;
+  text-decoration: none;
+}

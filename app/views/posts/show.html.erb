@@ -3,6 +3,9 @@
 <%= link_to "投稿一覧", posts_path %>
 
 <div class="post-wrapper">
+  <% if user_signed_in? && @post.user_id == current_user.id %>
+    <%= link_to "編集する", edit_post_path(@post.id), class:"post-edit-btn" %>
+  <% end %>
   <div class="post-title">
     タイトル：<%= @post.title %>
   </div>
