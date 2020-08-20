@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-  before_action :move_to_sign_in, only: [:new, :create]
+  before_action :move_to_sign_in, except: [:index, :show]
+  before_action :set_post, except: [:new, :create, :index]
+  before_action :posted_user?, except: [:new, :create, :index, :show]
 
   def new
     @post = Post.new
@@ -19,13 +21,39 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to posts_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @post.destroy
+      redirect_to posts_path
+    else
+      render :show
+    end
   end
 
   private
 
   def move_to_sign_in
     redirect_to new_user_session_path unless user_signed_in?
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def posted_user?
+    redirect_to post_path(params[:id]) unless @post.user_id == current_user.id
   end
 
   def post_params

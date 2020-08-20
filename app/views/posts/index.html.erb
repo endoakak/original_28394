@@ -11,6 +11,10 @@
 
 <% @posts.each do |post| %>
 <div class="post-wrapper">
+  <% if user_signed_in? && post.user_id == current_user.id %>
+    <%= link_to "編集する", edit_post_path(post.id), class:"post-edit-btn" %>
+    <%= link_to "この投稿を削除する", post_path(post.id), method: :delete, class:"post-delete-btn" %>
+  <% end %>
   <%= link_to post_path(post.id), class:"post-link" do %>
   <div class="post-title">
     タイトル：<%= post.title %>
