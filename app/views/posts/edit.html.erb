@@ -1,0 +1,37 @@
+<h1>投稿編集ページ</h1>
+
+<%= form_with model: @post, local: true do |f| %>
+
+<div class="field">
+  <%= f.label :title, "作品タイトル" %><br />
+  <%= f.text_field :title, autofocus: true, autocomplete: "off" %>
+</div>
+
+<div class="field">
+  <%= f.label :content, "本文" %><br />
+  <%= f.text_field :content, autocomplete: "off" %>
+</div>
+
+<div class="field">
+  <%#= f.label :spoiler, "ネタバレ" %><br />
+  <%#= f.check_box :spoiler, {}, "true", "false" %>
+</div>
+
+<div class="field">
+  <%= f.radio_button :spoiler, :true %>
+  <%= f.label :spoiler, "ネタバレあり", {value: :true} %><br />
+  <%= f.radio_button :spoiler, :false %>
+  <%= f.label :spoiler, "ネタバレなし", {value: :false} %><br />
+</div>
+
+<div class="field">
+  <%= f.label :category_id, "カテゴリー" %><br />
+  <%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: "--"}) %>
+</div>
+
+<div class="field">
+  <%= f.submit "更新" %>
+</div>
+
+<%= link_to "投稿一覧", posts_path %>
+<% end %>
