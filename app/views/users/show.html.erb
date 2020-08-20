@@ -1,0 +1,29 @@
+<h1><%= current_user.name %>さんのマイページ</h1>
+
+<%= current_user.name %>さんの投稿
+<% current_user.posts.each do |post| %>
+  <div class="post-wrapper">
+    <%= link_to "編集する", edit_post_path(post.id), class:"post-edit-btn" %>
+    <%= link_to "この投稿を削除する", post_path(post.id), method: :delete, class:"post-delete-btn" %>
+    <%= link_to post_path(post.id), class:"post-link" do %>
+    <div class="post-title">
+      タイトル：<%= post.title %>
+    </div>
+    <div class="post-spoiler">
+      <% if post.spoiler %>
+        ネタバレあり
+      <% else %>
+        ネタバレなし
+      <% end %>
+    </div>
+    <div class="post-category">
+      カテゴリー：<%= post.category.name %>
+    </div>
+    <div class="post-content">
+      本文：<%= post.content %>
+    </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= link_to "投稿一覧", posts_path %>
