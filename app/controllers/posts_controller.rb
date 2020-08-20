@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :move_to_sign_in, except: [:index, :show]
   before_action :set_post, except: [:new, :create, :index]
-  before_action :is_posted_user, except: [:new, :create, :index, :show]
+  before_action :posted_user?, except: [:new, :create, :index, :show]
 
   def new
     @post = Post.new
@@ -52,7 +52,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def is_posted_user
+  def posted_user?
     redirect_to post_path(params[:id]) unless @post.user_id == current_user.id
   end
 
