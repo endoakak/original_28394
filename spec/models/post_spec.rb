@@ -22,8 +22,8 @@ RSpec.describe Post, type: :model do
       expect(@post.errors.full_messages).to include("Content can't be blank")
     end
 
-    it "contentが1000文字を超えていると保存できない" do
-      @post.content = Faker::Lorem.characters(number: 1001)
+    it "contentが4000文字を超えていると保存できない" do
+      @post.content = Faker::Lorem.characters(number: 4001)
       @post.valid?
       expect(@post.errors.full_messages).to include("Content is too long (maximum is 1000 characters)")
     end
