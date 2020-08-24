@@ -14,12 +14,15 @@ consumer.subscriptions.create("ReactionChannel", {
     const btnId = `reaction-btn-${data.content}`;
     const reactionButton = document.getElementById(btnId);
     const checkedButton = document.getElementById(`${btnId}-checked`);
+    const reactionCount = document.getElementById(`reaction-count-${data.content}`);
     if (reactionButton.getAttribute("class").includes("hidden")) {
       reactionButton.setAttribute("class", "btn border-primary");
       checkedButton.setAttribute("class", "hidden");
+      reactionCount.innerHTML =　Number(reactionCount.innerHTML) - 1;
     } else {
       reactionButton.setAttribute("class", "hidden");
       checkedButton.setAttribute("class", "btn btn-primary");
+      reactionCount.innerHTML = Number(reactionCount.innerHTML) + 1;
     }
   }
 });
