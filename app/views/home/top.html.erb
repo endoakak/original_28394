@@ -1,23 +1,25 @@
-<div class="top-title container-fruid d-flex align-items-center">
-  <div class="row justify-content-center">
-    <h1 class="col-6 text-center text-white display-3">
-      トップページ
-    </h1>
-    <div class="w-100"></div>
-    <div class="col-6 text-center text-white">
-      好きな物語への愛を語るサイトです。
+<div class="top-title">
+  <div class="container d-flex align-items-center h-100">
+    <div class="row justify-content-center">
+      <h1 class="col-6 text-center text-white display-3">
+        トップページ
+      </h1>
+      <div class="w-100"></div>
+      <div class="col-6 text-center text-white">
+        好きな物語への愛を語るサイトです。
+      </div>
+      <div class="w-100"></div>
+      <div class="row justify-content-center mt-3">
+        <% if user_signed_in? %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"col-1 btn btn-danger btn-sm m-1 border" %>
+        <% else %>
+          <%= link_to "新規登録", new_user_registration_path, class:"col-1 btn btn-primary m-1 border" %>
+          <%= link_to "ログイン", new_user_session_path, class:"col-1 btn btn-success m-1 border" %>
+        <% end %>
+      </div>
+      <div class="w-100"></div>
+      <%= link_to "みんなの投稿を見てみる！", posts_path, class:"col-2 btn btn-info m-1 border" %>
     </div>
-    <div class="w-100"></div>
-    <div class="row justify-content-center mt-3">
-      <% if user_signed_in? %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"col-1 btn btn-danger btn-sm m-1 border" %>
-      <% else %>
-        <%= link_to "新規登録", new_user_registration_path, class:"col-1 btn btn-primary m-1 border" %>
-        <%= link_to "ログイン", new_user_session_path, class:"col-1 btn btn-success m-1 border" %>
-      <% end %>
-    </div>
-    <div class="w-100"></div>
-    <%= link_to "みんなの投稿を見てみる！", posts_path, class:"col-2 btn btn-info m-1 border" %>
   </div>
 </div>
 
