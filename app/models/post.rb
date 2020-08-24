@@ -11,5 +11,5 @@ class Post < ApplicationRecord
   end
 
   validates :spoiler, inclusion: [true, false]
-  validates :content, length: { maximum: 1000 }
+  validates :content, length: { maximum: 4000 }
 end

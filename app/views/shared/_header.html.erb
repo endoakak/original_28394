@@ -1,0 +1,16 @@
+<div class="header sticky-top border-bottom">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <%= link_to "トップへ", root_path, class:"navbar-brand text-light mr-auto ml-2" %>
+    
+      <div class="navbar-nav">
+        <% if user_signed_in? %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link text-light" %>
+          <%= link_to "新規投稿", new_post_path, class:"nav-link text-light" %>
+          <%= link_to "マイページ", users_show_path, class:"nav-link text-light mr-2" %>
+        <% else %>
+          <%= link_to "新規登録", new_user_registration_path, class:"nav-link text-light" %>
+          <%= link_to "ログイン", new_user_session_path, class:"nav-link text-light mr-2" %>
+        <% end %>
+      </div>
+  </nav>
+</div>

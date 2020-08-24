@@ -1,3 +1,23 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-wrapper {
+  margin: 20px;
+  border: 2px solid lightgrey;
+  width: 40vw;
+}
+
+.post-link {
+  text-decoration: none;
+}
+
+.post-edit-btn {
+  background-color: orange;
+  text-decoration: none;
+}
+
+.post-delete-btn {
+  background-color: pink;
+  text-decoration: none;
+}
