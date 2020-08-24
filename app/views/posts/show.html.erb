@@ -28,7 +28,7 @@
         <% end %>
       </div>
       <div class="post-content p-3">
-        <%= @post.content %>
+        <%=safe_join(@post.content.split("\n"),tag(:br))%>
       </div>
     </div>
   </div>
