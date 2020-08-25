@@ -8,30 +8,32 @@
 
 <%= link_to "投稿一覧へ(あとでパンクズに変えたい)", posts_path %>
 
-<div class="container">
-  <div class="row justify-content-center mt-5 mb-5">
-    <% current_user.posts.reverse_each do |post| %>
-    <div class="col-8 bg-light p-5">
-      <div class="pb-3 border-bottom">
-        <div class="mb-2">
-          <% if post.spoiler %>
-            <span class="text-warning font-weight-bold btn-sm">ネタバレあり</span>
-          <% else %>
-            <span class="text-primary font-weight-bold btn-sm">ネタバレなし</span>
-          <% end %>
-          タイトル：<%= post.title %>
+<div class="container-fluid">
+  <div class="container">
+    <div class="row justify-content-center mt-5 mb-5">
+      <% current_user.posts.reverse_each do |post| %>
+      <div class="col-8 bg-light p-5">
+        <div class="pb-3 border-bottom">
+          <div class="mb-2">
+            <% if post.spoiler %>
+              <span class="text-warning font-weight-bold btn-sm">ネタバレあり</span>
+            <% else %>
+              <span class="text-primary font-weight-bold btn-sm">ネタバレなし</span>
+            <% end %>
+            タイトル：<%= post.title %>
+          </div>
+          <div class="post-category mb-2">
+            カテゴリー：<%= post.category.name %>
+          </div>
+          <%= link_to "編集する", edit_post_path(post.id), class:"btn btn-warning btn-sm col-2 ml-1" %>
+          <%= link_to "削除する", post_path(post.id), method: :delete, class:"btn btn-danger btn-sm col-2 ml-1" %>
         </div>
-        <div class="post-category mb-2">
-          カテゴリー：<%= post.category.name %>
+        <div class="post-content p-3">
+          <%= post.content %>
         </div>
-        <%= link_to "編集する", edit_post_path(post.id), class:"btn btn-warning btn-sm col-2 ml-1" %>
-        <%= link_to "削除する", post_path(post.id), method: :delete, class:"btn btn-danger btn-sm col-2 ml-1" %>
       </div>
-      <div class="post-content p-3">
-        <%= post.content %>
-      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
 
