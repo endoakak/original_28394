@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.post-link {
-  text-decoration: none;
-}
 
 .index-title {
   background-image: image-url("original-bg-image3.png");
@@ -31,4 +28,22 @@
 
 .hidden {
   display: none;
+}
+
+.post-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.post-content {
+  height: 200px;
+  overflow: hidden;
+}
+
+.comment {
+  cursor: default;
+}
+
+.post-wrapper {
+  border-radius: 1rem;
 }
