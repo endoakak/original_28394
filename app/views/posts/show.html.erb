@@ -29,7 +29,7 @@
       <div class="p-3">
         <%=safe_join(@post.content.split("\n"),tag(:br))%>
       </div>
-      <div class="row justify-content-around">
+      <div class="row justify-content-around m-3">
         <% Comment.all.length.times do |i| %>
         <div class="col d-flex">
           <% if !user_signed_in? %>
@@ -50,6 +50,9 @@
           <%= content_tag(:div, reaction_count, id:"reaction-count-#{i+1}", class:"ml-2") %>
         </div>
         <% end %>
+      </div>
+      <div class="text-center">
+        <%= link_to "投稿一覧に戻る", posts_path %>
       </div>
     </div>
   </div>
