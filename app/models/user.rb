@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
+  has_many :reactions
 
   validates :name, presence: true
   PASSWORD_REGEX = /\A(?=.*?[a-zA-Z])(?=.*?[\d])\w{6,12}\z/.freeze
