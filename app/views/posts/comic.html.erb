@@ -1,0 +1,13 @@
+<%= render "shared/header" %>
+
+<div class="index-title d-flex align-items-center justify-content-center">
+  <div class="h1 text-center text-white font-weight-bold">マンガについての投稿</div>
+</div>
+
+<div class="container-fluid py-5">
+  <div class="container">
+    <%= render "shared/index", posts: @posts %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
