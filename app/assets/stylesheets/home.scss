@@ -2,19 +2,63 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.top-title {
+.top-title-image {
   background-image: image-url("original-bg-image3.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 90vh;
-  opacity: 0.9;
+}
+
+.top-title {
+  background: rgba(255, 255, 255, 0.15);
+  height: 90vh;
+  text-shadow: 1px 1px 1px #808080;
 }
 
 .top-about {
-  margin: 100px 0;
+  line-height: 3em;
+  background: rgba(#a9e1ff, 0.3);
 }
 
-.top-cards {
-  margin: 100px 0;
+.about-heading {
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.points-heading {
+  text-shadow: 1px 1px 1px #808080;
+}
+
+.point-heading {
+  position: relative;
+  margin: 47px 0;
+  text-shadow: 0 0 2px white;
+}
+
+.point-heading:before {
+  content: "";
+  position: absolute;
+  background: #a9e1ff;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  top: 50%;
+  border: dashed 1px white;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  box-shadow: 0px 0px 0px 5px #a9e1ff;
+}
+
+.top-start {
+  background: rgba(#a9e1ff, 0.3);
+}
+
+.top-start-heading {
+  font-size: 40px;
+  text-shadow: 0 0 2px white;
 }
