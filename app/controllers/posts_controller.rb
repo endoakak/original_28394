@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :move_to_sign_in, except: [:index, :show]
-  before_action :set_post, except: [:new, :create, :index]
-  before_action :posted_user?, except: [:new, :create, :index, :show]
+  before_action :move_to_sign_in, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :posted_user?, only: [:edit, :update, :destroy]
 
   def new
     @post = Post.new
@@ -40,6 +40,22 @@ class PostsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def novel
+    @posts = Post.where(category_id: 1).order("created_at DESC")
+  end
+
+  def movie
+    @posts = Post.where(category_id: 2).order("created_at DESC")
+  end
+
+  def comic
+    @posts = Post.where(category_id: 3).order("created_at DESC")
+  end
+
+  def anime
+    @posts = Post.where(category_id: 4).order("created_at DESC")
   end
 
   private
