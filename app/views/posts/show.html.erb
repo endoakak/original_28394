@@ -35,11 +35,11 @@
             <% if !user_signed_in? %>
               <span class="comment btn border-primary"><%= Comment.find(i+1).name %></span>
             <% elsif @post.reactions.find_by(comment_id: i+1, user_id: current_user.id) %>
-              <%= link_to Comment.find(i+1).name, post_reactions_path(@post.id, i+1), method: :delete, id:"reaction-btn-#{i+1}-checked", class:"btn btn-primary" %>
-              <%= link_to Comment.find(i+1).name, post_reactions_path(@post.id, i+1), method: :post, id:"reaction-btn-#{i+1}", class:"btn border-primary hidden" %>
+              <%= link_to Comment.find(i+1).name, post_reactions_path(@post.id, i+1), method: :delete, remote: true, id:"reaction-btn-#{i+1}-checked", class:"btn btn-primary" %>
+              <%= link_to Comment.find(i+1).name, post_reactions_path(@post.id, i+1), method: :post, remote: true, id:"reaction-btn-#{i+1}", class:"btn border-primary hidden" %>
             <% else %>
-              <%= link_to Comment.find(i+1).name, post_reactions_path(@post.id, i+1), method: :delete, id:"reaction-btn-#{i+1}-checked", class:"btn btn-primary hidden" %>
-              <%= link_to Comment.find(i+1).name, post_reactions_path(@post.id, i+1), method: :post, id:"reaction-btn-#{i+1}", class:"btn border-primary" %>
+              <%= link_to Comment.find(i+1).name, post_reactions_path(@post.id, i+1), method: :delete, remote: true, id:"reaction-btn-#{i+1}-checked", class:"btn btn-primary hidden" %>
+              <%= link_to Comment.find(i+1).name, post_reactions_path(@post.id, i+1), method: :post, remote: true, id:"reaction-btn-#{i+1}", class:"btn border-primary" %>
             <% end %>
             <% reaction = @post.reactions.where(comment_id: i+1) %>
             <% if reaction %>

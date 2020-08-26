@@ -1,0 +1,8 @@
+btnId = `<%= @reaction.comment.id %>`;
+reactionButton = document.getElementById(`reaction-btn-${btnId}`);
+checkedButton = document.getElementById(`reaction-btn-${btnId}-checked`);
+reactionCount = document.getElementById(`reaction-count-${btnId}`);
+
+reactionButton.setAttribute("class", "hidden");
+checkedButton.setAttribute("class", "btn btn-primary");
+reactionCount.innerHTML = Number(reactionCount.innerHTML) + 1;
