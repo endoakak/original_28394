@@ -6,42 +6,7 @@
 
 <div class="container-fluid py-5">
   <div class="container">
-    <div class="row justify-content-center w-75 mx-auto bg-light rounded">
-      <div class="new-post col-4 text-center border-bottom p-3 my-3 font-weight-bold">みんなの投稿</div>
-      <div class="form-group form-check d-flex justify-content-center">
-        <input type="checkbox" class="form-check-input mr-1" id="spoiler-check-box">
-        <label class="form-check-label">ネタバレを含む投稿を非表示にする</label>
-      </div>
-      <% @posts.each do |post| %>
-        <div class="post-wrapper col-9 bg-white border border-primary pt-5 px-5 pb-3 mb-5">
-          <%= link_to post_path(post.id), class:"post-link text-dark" do %>
-            <div class="mb-2">
-              <% if post.spoiler %>
-                <span class="text-danger font-weight-bold btn-sm">ネタバレあり</span>
-              <% else %>
-                <span class="text-primary font-weight-bold btn-sm">ネタバレなし</span>
-              <% end %>
-              <span class="post-title"><%= post.title %></span>
-            </div>
-            <div class="mb-2 ml-2">
-              カテゴリー：<%= post.category.name %>
-            </div>
-            <div class="pb-1 border-bottom">
-              <% if user_signed_in? && post.user_id == current_user.id %>
-                <%= link_to "編集する", edit_post_path(post.id), class:"btn btn-warning btn-sm col-2 ml-1 mb-2" %>
-                <%= link_to "削除する", post_path(post.id), method: :delete, class:"btn btn-danger btn-sm col-2 ml-1 mb-2" %>
-              <% end %>
-            </div>
-            <div class="post-content p-3">
-              <%=safe_join(post.content.split("\n"),tag(:br))%>
-            </div>
-            <div class="text-center pt-3">
-              "続きを読む"
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+    <%= render "shared/index", posts: @posts %>
   </div>
 </div>
 
