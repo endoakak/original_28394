@@ -1,63 +1,96 @@
-<div class="top-title">
-  <div class="container d-flex align-items-center h-100">
-    <div class="row justify-content-center">
-      <h1 class="col-6 text-center text-white display-3">
-        トップページ
-      </h1>
-      <div class="w-100"></div>
-      <div class="col-6 text-center text-white">
-        好きな物語への愛を語るサイトです。
+<div class="top-title-image">
+  <div class="top-title">
+    <div class="container d-flex align-items-center h-100">
+      <div class="row justify-content-center">
+        <div class="col-6 text-center text-white display-2">
+          トップページ
+        </div>
+        <div class="w-100"></div>
+        <div class="col-6 text-center text-white lead">
+          好きな物語への愛を語るサイトです。
+        </div>
+        <div class="w-100"></div>
+        <div class="row justify-content-center mt-2">
+          <% if user_signed_in? %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"col-2 btn btn-danger m-1 border" %>
+          <% else %>
+            <%= link_to "新規登録", new_user_registration_path, class:"col-1 btn btn-primary m-1 border" %>
+            <%= link_to "ログイン", new_user_session_path, class:"col-1 btn btn-success m-1 border" %>
+          <% end %>
+        </div>
+        <div class="w-100"></div>
+        <%= link_to "みんなの投稿を見てみる！", posts_path, class:"col-2 btn btn-info m-1 border" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="top-about container-fluid">
+  <div class="container py-5">
+    <div class="row justify-content-center mx-auto text-center py-5">
+      <div class="about-heading col-5 border-bottom">
+        このサイトについて
       </div>
       <div class="w-100"></div>
-      <div class="row justify-content-center mt-3">
-        <% if user_signed_in? %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"col-1 btn btn-danger btn-sm m-1 border" %>
-        <% else %>
-          <%= link_to "新規登録", new_user_registration_path, class:"col-1 btn btn-primary m-1 border" %>
-          <%= link_to "ログイン", new_user_session_path, class:"col-1 btn btn-success m-1 border" %>
+      <div class="col-5">
+        <p>好きなものについて心おきなく語れて、それを聞いてくれる人がいる</p>
+        <p>そういう場所を、このサイトは目指しています。</p>
+        <br>
+        <p>その物語に出会えたことがたまらなく嬉しくて</p>
+        <p>その物語が終わってしまったことが少し寂しい</p>
+        <p>そんな気持ちになったことはありませんか？</p>
+        <p>誰しも、お気に入りの物語がきっとあると思います</p>
+        <p>あなたの好きな物語のお話を、聞かせてください</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="top-points container-fluid">
+  <div class="container py-5">
+    <div class="points-heading mx-auto w-50 text-center display-6 py-5">
+      このサイトの特徴
+    </div>
+    <div class="w-100"></div>
+    <div class="row py-5">
+      <div class="col-4">
+        <div class="point-heading text-center lead">匿名での投稿</div>
+        <div class="w-75 mx-auto pt-4 text-center">
+          アカウント名もアイコンも一切公開されず、完全に匿名で投稿できます。他人にどう思われるか、自分のキャラに合っているかなど気にすることなく投稿できます。
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="point-heading text-center lead">投稿がみんなポジティブ</div>
+        <div class="w-75 mx-auto pt-4 text-center">
+          みんなが好きなものの好きなところを語る場所です。作品に対する批判的なレビューを目にすることはありません。
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="point-heading text-center lead">３種類のリアクションボタン</div>
+        <div class="w-75 mx-auto pt-4 text-center">
+          コメント機能がないため、自分の投稿に対して誹謗中傷が寄せられることはありません。コメントの代わりに、気になった投稿にはどんどんリアクションボタンを押しましょう。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="top-start container-fluid">
+  <div class="container py-5">
+    <div class="row justify-content-center py-5">
+      <div class="col-5 text-right">
+        <div class="top-start-heading">
+          さあ、はじめましょう
+        </div>
+        <div class="m-3">投稿を見るだけならアカウント登録は不要です。</div>
+      </div>
+      <div class="col-5 text-center">
+        <% if !user_signed_in? %>
+          <%= link_to "新規登録", new_user_registration_path, class:"btn btn-primary btn-lg m-1 border" %>
+          <%= link_to "ログイン", new_user_session_path, class:"btn btn-success btn-lg m-1 border" %>
         <% end %>
+        <%= link_to "みんなの投稿を見てみる！", posts_path, class:"btn btn-info btn-lg m-1 border" %>
       </div>
-      <div class="w-100"></div>
-      <%= link_to "みんなの投稿を見てみる！", posts_path, class:"col-2 btn btn-info m-1 border" %>
-    </div>
-  </div>
-</div>
-
-<div class="top-about container">
-  <div class="row">
-    <div class="col-5">
-      画像
-    </div>
-    <div class="col-7">
-      <h2 class="featurette-heading">このサイトについて</h2>
-      <p class="lead">コンセプトを説明</p>
-    </div>
-  </div>
-</div>
-
-<div class="top-cards container d-flex justify-content-around">
-  <div class="card" style="width: 18rem;">
-    <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
   </div>
 </div>
