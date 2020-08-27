@@ -13,4 +13,12 @@ class Post < ApplicationRecord
 
   validates :spoiler, inclusion: [true, false]
   validates :content, length: { maximum: 4000 }
+
+  def self.search(keyword)
+    if keyword != ""
+      Post.where("title LIKE(?)", "%#{keyword}%")
+    else
+      Post.all
+    end
+  end
 end
