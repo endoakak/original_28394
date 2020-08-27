@@ -1,36 +1,57 @@
-<h2>Sign up</h2>
+<%= render "shared/header" %>
 
-<%= form_with model: resource, as: resource_name, url: registration_path(resource_name), local: true do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="registration-page container d-flex align-items-center">
+  <%= form_with model: resource, as: resource_name, url: registration_path(resource_name), local: true, class: "row justify-content-center py-5 rounded border shadow" do |f| %>
 
-  <div class="field">
-    <%= f.label :name, "名前" %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
+    <div class="col-4 text-center lead border-bottom mb-1">
+      新規登録
+    </div>
 
-  <div class="field">
-    <%= f.label :email, "メールアドレス" %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
+    <div class="w-100"></div>
 
-  <div class="field">
-    <%= f.label :password, "パスワード" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <%= render 'shared/error_messages', model: f.object %>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "パスワードの確認" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="w-100"></div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="col-6">
+      <%= f.label :name, "ユーザー名", class:"p-1" %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"w-100 mb-2" %>
+    </div>
 
-<%= link_to "投稿一覧", posts_path %>
+    <div class="w-100"></div>
 
-<%= render "devise/shared/links" %>
+    <div class="col-6">
+      <%= f.label :email, "メールアドレス", class:"p-1" %><br />
+      <%= f.email_field :email, autocomplete: "email", class:"w-100 mb-2" %>
+    </div>
+
+    <div class="w-100"></div>
+
+    <div class="col-6">
+      <%= f.label :password, "パスワード", class:"p-1" %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> 文字以上英数字混合)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class:"w-100 mb-2" %>
+    </div>
+
+    <div class="w-100"></div>
+
+    <div class="col-6">
+      <%= f.label :password_confirmation, "パスワードの確認", class:"p-1" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"w-100 mb-2" %>
+    </div>
+
+    <div class="w-100"></div>
+
+    <div class="col text-center m-2">
+      <%= f.submit "登録する", class: "btn btn-primary border" %>
+    </div>
+
+    <div class="w-100"></div>
+
+    <div class="col-6 mt-2">
+      すでに登録がお済みの方はこちらから<%= render "devise/shared/links" %>
+    </div>
+  <% end %>
+</div>
