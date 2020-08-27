@@ -8,10 +8,14 @@
     <%= link_to "アニメ", anime_posts_path, class:"nav-link text-light mr-auto ml-2" %>
     
     <div class="navbar-nav">
+      <%= form_with url: search_posts_path, method: :get, local: true, class: "d-flex align-items-center" do |f| %>
+        <%= f.text_field :keyword, placeholder: "作品を検索する", class: "mr-2 h-75" %>
+        <%= f.submit "検索", class: "mr-3 h-75" %>
+      <% end %>
       <% if user_signed_in? %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link text-light" %>
+        <%= link_to "#{current_user.name}さんのマイページ", users_show_path, class:"nav-link text-light" %>
         <%= link_to "新規投稿", new_post_path, class:"nav-link text-light" %>
-        <%= link_to "マイページ", users_show_path, class:"nav-link text-light mr-3" %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link text-light mr-3" %>
       <% else %>
         <%= link_to "新規登録", new_user_registration_path, class:"nav-link text-light" %>
         <%= link_to "ログイン", new_user_session_path, class:"nav-link text-light mr-3" %>
