@@ -58,6 +58,11 @@ class PostsController < ApplicationController
     @posts = Post.where(category_id: 4).order("created_at DESC")
   end
 
+  def search
+    @keyword = params[:keyword]
+    @posts = Post.search(@keyword)
+  end
+
   private
 
   def move_to_sign_in
