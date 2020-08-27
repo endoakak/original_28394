@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: ユーザー名
+      post:
+        title: 作品のタイトル
+        content: 投稿の内容
+        category: カテゴリー
+        spoiler: ネタバレ

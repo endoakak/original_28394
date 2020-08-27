@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
     it "nameが空だと保存できない" do
       @user.name = nil
       @user.valid?
-      expect(@user.errors.full_messages).to include("Name can't be blank")
+      expect(@user.errors.full_messages).to include("ユーザー名を入力してください")
     end
 
     it "passwordが5文字以下だと保存できない" do
@@ -21,7 +21,7 @@ RSpec.describe User, type: :model do
       @user.password = password
       @user.password_confirmation = password
       @user.valid?
-      expect(@user.errors.full_messages).to include("Password は6文字以上12文字以下で英数字混合で入力してください")
+      expect(@user.errors.full_messages).to include("パスワードは6文字以上12文字以下で英数字混合で入力してください")
     end
 
     it "passwordが13文字以上だと保存できない" do
@@ -29,7 +29,7 @@ RSpec.describe User, type: :model do
       @user.password = password
       @user.password_confirmation = password
       @user.valid?
-      expect(@user.errors.full_messages).to include("Password は6文字以上12文字以下で英数字混合で入力してください")
+      expect(@user.errors.full_messages).to include("パスワードは6文字以上12文字以下で英数字混合で入力してください")
     end
 
     it "passwordが英数字混合でなければ保存できない" do
@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
       @user.password = password
       @user.password_confirmation = password
       @user.valid?
-      expect(@user.errors.full_messages).to include("Password は6文字以上12文字以下で英数字混合で入力してください")
+      expect(@user.errors.full_messages).to include("パスワードは6文字以上12文字以下で英数字混合で入力してください")
     end
   end
 end
