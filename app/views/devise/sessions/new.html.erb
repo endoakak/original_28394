@@ -1,28 +1,37 @@
-<h2>Log in</h2>
+<%= render "shared/header" %>
 
-<%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f| %>
-  <div class="field">
-    <%= f.label :email, "メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="registration-page container d-flex align-items-center">
+  <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true, class: "row justify-content-center py-5 rounded border shadow" do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password, "パスワード" %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    <div class="col-4 text-center lead border-bottom mb-1">
+      ログイン
+    </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="w-100"></div>
+
+    <div class="col-6">
+      <%= f.label :email, "メールアドレス", class:"p-1" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"w-100 mb-2" %>
+    </div>
+
+    <div class="w-100"></div>
+
+    <div class="col-6">
+      <%= f.label :password, "パスワード", class:"p-1" %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class:"w-100 mb-2" %>
+    </div>
+
+    <div class="w-100"></div>
+
+    <div class="actions col text-center m-2">
+      <%= f.submit "ログイン", class: "btn btn-primary border" %>
+    </div>
+
+    <div class="w-100"></div>
+
+    <div class="col-6 mt-2">
+      まだ登録がお済みでない方はこちら<%= render "devise/shared/links" %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= link_to "投稿一覧", posts_path %>
-
-<%= render "devise/shared/links" %>
+</div>
