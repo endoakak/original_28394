@@ -16,6 +16,8 @@
           <div class="new-post col-4 text-center border-bottom p-3 mb-3 font-weight-bold">あたらしい投稿</div>
         </div>
 
+        <%= render 'shared/error_messages', model: f.object %>
+
         <div class="form-group">
           <%= f.label :title, "タイトル", class:"mb-3" %><br />
           <%= f.text_field :title, autofocus: true, placeholder:"作品のタイトルを入力してください", autocomplete: "off", class:"form-control mb-3" %>

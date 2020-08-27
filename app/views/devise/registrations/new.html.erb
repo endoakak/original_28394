@@ -2,11 +2,14 @@
 
 <div class="registration-page container d-flex align-items-center">
   <%= form_with model: resource, as: resource_name, url: registration_path(resource_name), local: true, class: "row justify-content-center py-5 rounded border shadow" do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="col-4 text-center lead border-bottom mb-1">
       新規登録
     </div>
+
+    <div class="w-100"></div>
+
+    <%= render 'shared/error_messages', model: f.object %>
 
     <div class="w-100"></div>
 
