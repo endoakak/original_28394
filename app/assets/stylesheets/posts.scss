@@ -13,10 +13,6 @@
   opacity: 0.9;
 }
 
-.container-fluid {
-  // background-color: #eeb69080
-}
-
 .post-container {
   background-color: white;
 }
@@ -50,4 +46,8 @@
 
 .post-wrapper {
   border-radius: 1rem;
+}
+
+.no-result {
+  height: 30vh;
 }

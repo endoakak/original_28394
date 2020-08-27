@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get "movie"
       get "comic"
       get "anime"
+      get "search"
     end
     post "/reactions/:id", to: "reactions#create", as: "reactions"
     delete "/reactions/:id", to: "reactions#destroy"
