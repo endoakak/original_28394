@@ -4,6 +4,9 @@
   <div class="h1 text-center text-white font-weight-bold">小説についての投稿</div>
 </div>
 
+<% breadcrumb :novel %>
+<%= breadcrumbs separator: " &rsaquo; " %>
+
 <div class="container-fluid py-5">
   <div class="container">
     <%= render "shared/index", posts: @posts %>
