@@ -8,7 +8,6 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  // background-attachment: fixed;
   height: 40vh;
   opacity: 0.9;
 }
@@ -50,4 +49,8 @@
 
 .no-result {
   height: 30vh;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
 }

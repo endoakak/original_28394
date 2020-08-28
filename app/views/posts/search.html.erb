@@ -4,6 +4,9 @@
   <div class="h1 text-center text-white font-weight-bold">”<%= @keyword %>”の検索結果</div>
 </div>
 
+<% breadcrumb :search, @keyword %>
+<%= breadcrumbs separator: " &rsaquo; " %>
+
 <div class="container-fluid py-5">
   <div class="container">
     <% if @posts != [] %>
@@ -17,3 +20,4 @@
 </div>
 
 <%= render "shared/footer" %>
+
