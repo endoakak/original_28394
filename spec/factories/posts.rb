@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :post do
-    title { "タイトル" }
-    content { "内容" }
+    title { Faker::Lorem.word }
+    content { Faker::Lorem.sentence }
     spoiler { true }
     category { Category.all.sample }
     association :user
