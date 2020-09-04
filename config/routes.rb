@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'inquiry/new'
+  post 'inquiry/edit'
   post 'inquiry/confirm'
   post 'inquiry/thanks'
   ActiveAdmin.routes(self)

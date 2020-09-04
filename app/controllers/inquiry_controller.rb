@@ -3,6 +3,10 @@ class InquiryController < ApplicationController
     @inquiry = Inquiry.new
   end
 
+  def edit
+    @inquiry = Inquiry.new(inquiry_params)
+  end
+
   def confirm
     @inquiry = Inquiry.new(inquiry_params)
     render :new unless @inquiry.valid?
