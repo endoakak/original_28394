@@ -8,3 +8,9 @@ ja:
         content: 投稿の内容
         category: カテゴリー
         spoiler: ネタバレ
+  activemodel:
+    attributes:
+      inquiry:
+        name: お名前
+        email: メールアドレス
+        message: お問い合わせ内容
