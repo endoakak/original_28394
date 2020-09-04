@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'inquiry/new'
+  get 'inquiry/confirm'
+  get 'inquiry/thanks'
   ActiveAdmin.routes(self)
   devise_for :users
   root to: "home#top"
