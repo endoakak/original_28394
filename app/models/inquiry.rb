@@ -1,9 +1,12 @@
 class Inquiry
   include ActiveModel::Model
 
-  attr_accessor :name, :email, :message
+  attr_accessor :name, :name_kana, :email, :message
 
-  validates :name, :presence => { :message => 'を入力してください' }
-  validates :email, :presence => { :message => 'を入力してください' }
-  validates :message, :presence => { :message => 'を入力してください' }
+  with_options presence: { message: "を入力してください"} do
+    validates :name
+    validates :name_kana
+    validates :email
+    validates :message
+  end
 end

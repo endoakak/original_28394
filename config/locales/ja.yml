@@ -12,5 +12,6 @@ ja:
     attributes:
       inquiry:
         name: お名前
+        name_kana: ふりがな
         email: メールアドレス
         message: お問い合わせ内容
