@@ -3,6 +3,8 @@
 # アプリ名
 テイルズ「物語への愛を語るサイト」
 
+<img width="1437" alt="スクリーンショット 2020-09-07 19 07 49" src="https://user-images.githubusercontent.com/68261473/92376383-736c5500-f13d-11ea-8965-13dabddfafa0.png">
+
 <br>
 
 # 概要
@@ -22,8 +24,8 @@
 - VSCode (Visual Studio Code)
 - GitHub
 
-###使用しているgem
-
+### 使用しているgem
+後日追記予定
 
 <br>
 
