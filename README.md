@@ -20,6 +20,7 @@
 - Ruby 2.6.5
 - Ruby on Rails 6.0.3.2
 - JavaScript
+- MySQL
 - Bootstrap5
 - AWS (EC2, Route 53, ACM, ELB)
 - VSCode (Visual Studio Code)
@@ -52,7 +53,7 @@ https://tales-monogatari.com/
 このサイトを作成した背景をご説明します。
 
 ### 好きな作品について、気軽に語れる場を作りたい
-→Twitterやブログでは日々の継続が必要。どうしても語りたい欲が高まったときだけ語れる場所を作りたかった。
+→作品を観たり読んだりしたあと「この作品めっちゃ好き！語りたい！」と思った時に、語れる場所を作りたかった。Twitterやブログでは日頃からの継続が必要になってしまうので、語りたい時にだけ語れる場所が欲しかった。
 
 ### 複数のジャンルにまたがった感想共有サイトが欲しい
 →映画のレビューサイト、小説のレビューサイトなどはあるが、それらを一つにまとめたサイトが欲しかった。
@@ -68,6 +69,8 @@ https://tales-monogatari.com/
 # 機能の紹介
 このサイトの主な機能をご紹介します。特に見ていただきたいこだわりポイントには、⭐︎マークがついています。
 
+<br>
+
 ## トップページ
 トップページです。ログインしていなければ新規登録・ログインボタン、ログインしていればログアウトボタンが表示され、どちらの場合も投稿一覧ページへのボタンが表示されます。
 
@@ -75,6 +78,7 @@ https://tales-monogatari.com/
 
 ![top-page決定版](https://user-images.githubusercontent.com/68261473/92421935-02b54f00-f1b6-11ea-8f09-b80bcad23654.gif)
 
+<br>
 
 ## 新規登録・ログイン
 ユーザーの新規登録、ログインができます。ユーザーの管理にはdeviseを使用しています。
@@ -83,6 +87,7 @@ https://tales-monogatari.com/
 
 <img width="1440" alt="ログイン画面" src="https://user-images.githubusercontent.com/68261473/92362268-b40ea300-f12a-11ea-80e4-855e01daa639.png">
 
+<br>
 
 ## 投稿一覧表示
 投稿の一覧を表示する画面です。
@@ -96,17 +101,21 @@ https://tales-monogatari.com/
 
 ![posts-index](https://user-images.githubusercontent.com/68261473/92363178-12885100-f12c-11ea-8abd-ff9448da0712.gif)
 
+<br>
 
 ## ⭐︎ネタバレ非表示機能
 「ネタバレを含む投稿を非表示にする」にチェックを入れると、ネタバレを含む投稿を非表示にできます。その後チェックを外すと再度表示されます。
 
 ![posts-spoiler](https://user-images.githubusercontent.com/68261473/92363928-4021ca00-f12d-11ea-9d99-0aa2866d8ba7.gif)
 
+<br>
 
 ## 作品検索機能
 作品を検索する機能です。ヘッダーの検索フォームにキーワードを入力し、検索ボタンを押すと、作品のタイトルにキーワードを含む投稿が表示されます。
 
 ![posts-search](https://user-images.githubusercontent.com/68261473/92364369-ef5ea100-f12d-11ea-82bd-8241d2cd4867.gif)
+
+<br>
 
 ## 新規投稿
 新規投稿画面です。
@@ -115,6 +124,7 @@ https://tales-monogatari.com/
 
 ![screencapture-tales-monogatari-posts-new-2020-09-07-17_47_20](https://user-images.githubusercontent.com/68261473/92368131-46667500-f132-11ea-90b6-71f7b1e742e6.png)
 
+<br>
 
 ## ⭐︎リアクションボタン
 投稿に対してリアクションをすることができます。Twitterのいいね！のような機能です。
@@ -128,6 +138,7 @@ https://tales-monogatari.com/
 
 ![post-reaction](https://user-images.githubusercontent.com/68261473/92369340-d822b200-f133-11ea-965b-f0ca9b39cbb1.gif)
 
+<br>
 
 ## ⭐︎お問い合わせフォーム
 ユーザーからの問い合わせを受けるため、お問い合わせフォームを用意しました。
@@ -140,6 +151,7 @@ https://tales-monogatari.com/
 
 ![inquiry](https://user-images.githubusercontent.com/68261473/92370038-b7a72780-f134-11ea-9ddc-a46230fb7283.gif)
 
+<br>
 
 ## 管理画面
 管理画面です。
@@ -152,6 +164,7 @@ https://tales-monogatari.com/
 
 <img width="1438" alt="スクリーンショット 2020-09-07 18 12 06" src="https://user-images.githubusercontent.com/68261473/92370747-ab6f9a00-f135-11ea-9316-22832e59f1ff.png">
 
+<br>
 
 ## ⭐︎https通信
 ユーザーに安心して使っていただくため、https通信ができるようにしました。
