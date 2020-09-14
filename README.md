@@ -26,9 +26,6 @@
 - VSCode (Visual Studio Code)
 - GitHub
 
-### 使用しているgem
-後日追記予定
-
 <br>
 
 # 本番環境
